@@ -2,9 +2,30 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
-  <link rel="stylesheet" href="sass/main.css">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  <div class="hello">
-  what why is it working now? Niggamatic!
+  <div class="page-container">
+    
+    <h1>Stage plot maker</h1>
+
+    <div 
+      class="content-box canvas"
+      ondrop="drop(event)">
+      
+    </div>
+
+    <div class="content-box instrument-box">
+      <div 
+        id="dragme"
+        draggable="true"
+        
+        class="instrument">
+      </div>
+    </div>
+
   </div>
+</body>
+<script src="js/main.js"></script>
+</html>
+  

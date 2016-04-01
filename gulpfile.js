@@ -13,11 +13,11 @@ var reload = browserSync.reload;
 var runSequence = require('run-sequence');
 
 gulp.task('sass', function (){
-  return gulp.src('app/sass/main.sass')
+  return gulp.src('app/css/main.sass')
   .pipe(sass())
   .pipe(autoprefixer())
   // .pipe(cssnano())
-  .pipe(gulp.dest('app/sass'))
+  .pipe(gulp.dest('app/css'))
   .pipe(browserSync.stream());
 })
 
@@ -27,8 +27,9 @@ gulp.task('serve', ['sass'], function() {
         server: "./app"
     });
 
-    gulp.watch("app/sass/**/*.+(sass|scss)", ['sass']);
+    gulp.watch("app/css/**/*.+(sass|scss)", ['sass']);
     gulp.watch("app/*.html").on('change', browserSync.reload);
+    gulp.watch("app/js/*.js").on('change', browserSync.reload);
 });
 
 gulp.task('default', ['serve']);
